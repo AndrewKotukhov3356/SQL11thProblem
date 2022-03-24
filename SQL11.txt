@@ -9,7 +9,7 @@ SELECT T1.pilot_id FROM T1 JOIN T3 ON T1.pilot_id = T3.first_pilot_id
 AND T1.pilot_id = T3.second_pilot_id JOIN T2
 ON T3.plane_id = T2.plane_id
 AND T2.cargo_flg = 1
-WHERE T1.age > 45 AND T1.rank > 30
+WHERE T1.age > 45 AND T1.quantity > 30
 
 Задача№3 
 
