@@ -1,0 +1,16 @@
+Task 1:
+
+SELECT email FROM Staff              
+GROUP BY email        
+HAVING COUNT(email) > 1;
+
+Task 2:
+
+SELECT *, (substring((SELECT trunc(sysdate) FROM dual),1, 4) - substring(birthday,7, 10)) AS age FROM Staff;
+
+Task 3:
+
+SELECT jobtitles.name, MAX(staff.salary) AS SecondHighestSalary FROM Staff
+RIGHT JOIN jobtitles ON staff.jobtitle_id = jobtitles.jobtitle_id
+WHERE staff.salary != (SELECT MAX(salary)
+FROM Staff
